@@ -42,7 +42,7 @@ fn box_drawing(character: char, metrics: &Metrics, offset: &Delta<i8>) -> Raster
     let width = (metrics.average_advance as i32 + offset.x as i32).max(1) as usize;
     // Use one eight of the cell width, since this is used as a step size for block elemenets.
     let stroke_size = cmp::max((width as f32 / 8.).round() as usize, 1);
-    let heavy_stroke_size = stroke_size * 2;
+    let heavy_stroke_size = stroke_size * 3;
 
     // Certain symbols require larger canvas than the cell itself, since for proper contiguous
     // lines they require drawing on neighbour cells. So treat them specially early on and handle
